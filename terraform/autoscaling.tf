@@ -2,7 +2,7 @@ resource "aws_launch_configuration" "ecs_launch_config" {
   image_id             = data.aws_ami.ecs.id
   security_groups      = [aws_security_group.ecs_sg.id]
   instance_type        = "t2.micro"
-  key_name             = "aws"
+  key_name             = "rearckeypair"
   user_data = <<EOF
   #!/bin/bash
   echo ECS_CLUSTER=my-cluster >> /etc/ecs/ecs.config
