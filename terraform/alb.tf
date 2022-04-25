@@ -29,7 +29,8 @@ resource "aws_alb_listener" "front_end" {
   load_balancer_arn = aws_alb.main.id
   port              = 80
   protocol          = "HTTP"
-  
+  #ssl_policy = "ELBSecurityPolicy-FS-1-2-Res-2020-10"
+  #certificate_arn = "arn:aws:acm:ap-south-1:624547490816:certificate/dfc04f0a-2d1e-41e6-80ce-c02bf87d2d07"
 
   default_action {
     target_group_arn = aws_alb_target_group.app.id
